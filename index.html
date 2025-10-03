@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio | LegacyDesigns</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="night-sky.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="floating-particles"></div>
+    
+    <!-- Portfolio Homepage -->
+    <div id="portfolioPage" class="page">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>LegacyDesigns Portfolio</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+
+        <div class="portfolio-container">
+            <div id="home" class="section">
+                <h1 class="hero-title">Hi, This is legacyDesigns. 📦 I’m refining copy for a marketing campaign 
+                    or building a mockup that pops off the shelf.Designing is my hobby. Always delivering. <br><span class="gradient-text">Graphic Designer</span></h1>
+                <p class="hero-subtitle">Crafting digital experiences with passion and precision</p>
+                <div class="hero-buttons">
+                    <button class="portfolio-btn primary" onclick="scrollToSection('about')">Learn More</button>
+                    <button class="portfolio-btn secondary" onclick="scrollToSection('projects')">View Work</button>
+                </div>
+            </div>
+
+            <div id="about" class="section">
+                <h2>About Me</h2>
+                <p>👋 I’m Zach — the mind and heart behind Legacy Designs. I thrive at the intersection
+                     of <b>visual artistry</b> and <b>technical execution</b>, blending bold imagination with meticulous craftsmanship.
+                      Whether I’m deep in a Photoshop composite or troubleshooting a stubborn PowerShell error, I bring the same energy:
+                       focused, adaptive, and relentlessly solution-driven.</p><br>
+
+                       <p>🎨 My design philosophy is rooted in <b>impactful visual
+                         communication</b>, especially for <b>natural and herbal products</b>. I believe that branding should feel alive — organic,
+                          intentional, and emotionally resonant. From packaging mockups to poster layouts, I use advanced Photoshop workflows
+                           like <b>layer masks, Smart Objects, gradient overlays</b>, and <b>precise outlines</b> to create visuals that 
+                        don’t just look good — they connect.</p><br>
+
+                             <p>🧠 I value iteration, collaboration, and the power of a well-placed detail. I’m open to experimenting
+                                 with tone, format, and style to <b>meet the needs of any platform or audience</b>. If it means getting the 
+                                 message just right, I’ll tweak until it sings. 💬 At Legacy Designs, we don’t just make things look pretty — <b>we make them mean something.</b></p>
+
+                             
+            </div>
+
+            <div id="projects" class="section">
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card" onclick="showProjectModal('web-design')">
+                        <div class="project-image">
+                            <div class="placeholder-image">🌐</div>
+                        </div>
+                        <h3>Interactive Web Design</h3>
+                        <p>Modern responsive design with animated elements</p>
+                    </div>
+                    <div class="project-card secret-trigger" onclick="showSecretSection()">
+                        <div class="project-image">
+                            <div class="placeholder-image">☄️</div>
+                        </div>
+                        <h3>Poster Designs</h3>
+                        <p>Posters that I've been working on...</p>
+                    </div>
+                    <div class="project-card" onclick="showProjectModal('mobile-app')">
+                        <div class="project-image">
+                            <div class="placeholder-image">📱</div>
+                        </div>
+                        <h3>Mobile Applications</h3>
+                        <p>User-friendly mobile experiences</p>
+                    </div>
+                    <div class="project-card" onclick="showProjectModal('mobile-app')">
+                        <div class="project-image">
+                            <div class="placeholder-image">🚀</div>
+                        </div>
+                        <h3>Banners and Logos</h3>
+                        <p>Business banners and logos that I've been working on...</p>
+                    </div>
+                    <div class="project-card" onclick="showProjectModal('mobile-app')">
+                        <div class="project-image">
+                            <div class="placeholder-image">🛞</div>
+                        </div>
+                        <h3>UI/UX Designs</h3>
+                        <p>Creating beautiful UI/UX designs for websites and mobile applications</p>
+                    </div>
+                    <div class="project-card" onclick="showProjectModal('mobile-app')">
+                        <div class="project-image">
+                            <div class="placeholder-image">🪐</div>
+                        </div>
+                        <h3>Business Cards</h3>
+                        <p>Business cards that I've been working on...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contact" class="section">
+                <h2>Get In Touch</h2>
+                <p>Let's create something amazing together!</p>
+
+                <div class="contact-wrapper">
+                    <form id="contactForm" class="contact-form" onsubmit="return submitContact(event)">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your full names" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="phone">Phone Number (or Email)</label>
+                                <input type="text" id="phone" name="phone" placeholder="e.g. +254701234567 or you@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or idea" required></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="portfolio-btn primary">Send Message</button>
+                            <div id="formStatus" class="form-status" aria-live="polite"></div>
+                        </div>
+                    </form>
+
+                    <div class="contact-socials">
+                        <h3>Connect</h3>
+                        <div class="social-cards">
+                            <a class="social-card" href="https://instagram.com/legacyofdesigns" target="_blank" rel="noopener">
+                                <div class="social-badge insta">📸</div>
+                                <div class="social-meta">
+                                    <div class="social-label">Instagram</div>
+                                    <div class="social-handle">@legacyofdesigns</div>
+                                </div>
+                            </a>
+                            <a class="social-card" href="https://facebook.com/legacyart" target="_blank" rel="noopener">
+                                <div class="social-badge fb">📘</div>
+                                <div class="social-meta">
+                                    <div class="social-label">Facebook</div>
+                                    <div class="social-handle">@legacyart</div>
+                                </div>
+                            </a>
+                            <a class="social-card" href="mailto:legacyofdesigns@gmail.com" id="emailLink" onclick="return handleEmailClick(event)">
+                                <div class="social-badge mail">✉️</div>
+                                <div class="social-meta">
+                                    <div class="social-label">Email</div>
+                                    <div class="social-handle">legacyofdesigns@gmail.com</div>
+                                </div>
+                            </a>
+                            <a class="social-card" href="tel:+254769524121" id="phoneLink" onclick="return handlePhoneClick(event)">
+                                <div class="social-badge phone">📞</div>
+                                <div class="social-meta">
+                                    <div class="social-label">Phone</div>
+                                    <div class="social-handle">+254 769 524 121</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Romantic Section -->
+    <div id="romanticPage" class="page hidden">
+       <!--  <nav class="navbar">
+            <div class="nav-brand">
+                <h2>LegacyDesigns Portfolio</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </nav> -->
+        <div class="romantic-container">
+            <div class="romantic-content">
+                <div class="surprise-animation">
+                    <h1 class="romantic-title">Surpriseeee! 🥰😘</h1>
+                    <h2 class="romantic-question">Will you be my girlfriend😍?</h2>
+                </div>
+                
+                <div class="romantic-buttons">
+                    <button class="romantic-btn yes-btn" onclick="showYesMessage()">
+                        <span class="btn-content">
+                            <span class="btn-text">Yes</span>
+                            <span class="btn-heart">💕</span>
+                        </span>
+                        <div class="btn-shine"></div>
+                    </button>
+                    <button class="romantic-btn no-btn" onclick="showNoMessage()">
+                        <span class="btn-content">
+                            <span class="btn-text">No</span>
+                            <span class="btn-emoji">😔</span>
+                        </span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yes Message Overlay with Picture -->
+    <div id="yesOverlay" class="overlay hidden">
+        <!-- Video Background for Yes Overlay -->
+        <div class="yes-overlay-bg">
+            <video class="yes-bg-video" autoplay muted loop playsinline>
+                <source src="yes-video.mp4" type="video/mp4">
+            </video>
+            <div class="yes-bg-overlay"></div>
+        </div>
+        
+        <!-- Floating Hearts Container -->
+        <div class="yes-hearts-container"></div>
+
+        <div class="picture-container">
+                <div class="picture-frame">
+                    <div class="frame-glow"></div>
+                    <img id="herPicture" src="her-photo.jpg" alt="Beautiful you" class="her-photo">
+                    <div class="photo-shine"></div>
+                    <div class="frame-decoration"></div>
+                </div>
+                <div class="picture-caption">My Lovely and Beautiful Girlfriend 🥰😘😍</div>
+            </div> 
+        
+        <!-- Main Overlay Content -->
+        <div class="yes-overlay-content">
+            <!-- <div class="picture-container">
+                <div class="picture-frame">
+                    <div class="frame-glow"></div>
+                    <img id="herPicture" src="her-photo.jpg" alt="Beautiful you" class="her-photo">
+                    <div class="photo-shine"></div>
+                    <div class="frame-decoration"></div>
+                </div>
+                <div class="picture-caption">My Lovely and Beautiful Girlfriend 🥰😘😍</div>
+            </div> -->
+            
+            <div class="message-container">
+                <div class="celebration-burst"></div>
+                <h2 class="yes-message-title">You just made me the happiest person alive!</h2>
+                <p class="yes-message-text">I promise to cherish you, support you, and make you smile every single day. Here's to our beautiful journey ahead 🥰
+                    Since the  first time we met, I knew you were the one, kwanza vile ulikuwa unshare opinions in a positive way and speaking meaningful topics. You're the most beautiful and amazing person I've ever met.Vibe yako huwa iko tops, i mean i'm always happy around you.
+                    Bytheway huwa umeiva😅😊I'm super proud nikiwa na wewe. All the dates zenye tumeenda you've been always vibing and i can't wait for more of us babeey😘.
+                    Nakupenda sanaaaa sanaaaaaa🥰🥰🥰💕❤️Wewe ni ule dem walai. Huwa nimekudediiiiiii😙🤗🥳.I love you so so much my lovely princess🥰
+                </p>
+                 
+                <div class="floating-love-icons">
+                    <span class="love-icon">💖</span>
+                    <span class="love-icon">✨</span>
+                    <span class="love-icon">💝</span>
+                    <span class="love-icon">💕</span>
+                    <span class="love-icon">🌹</span>
+                </div>
+                
+                <button class="yes-close-btn" onclick="closeOverlay('yesOverlay')">
+                    <span>Close</span>
+                    <div class="btn-hearts">💕💖💝</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- No Message Overlay -->
+    <div id="noOverlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2>I understand, and I respect your feelings.</h2>
+            <p>Just know that you're truly special to me, and I'll always be grateful for the moments we've shared.</p>
+            <button class="close-btn" onclick="closeOverlay('noOverlay')">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
